@@ -10,5 +10,7 @@ jobs:
     steps:
       - name: "Echo Greeting"
         run: "echo 'Hei på deg GitHub Actions!'"
+      - name: "Echo Weather"
+        run: "echo 'Fint vær i dag!'"
       - name: "Echo Goodnight"
         run: "echo 'Natta!'"
