@@ -30,3 +30,11 @@ jobs:
 
       - name: "Test project"
         run: dotnet test --no-build --configuration Release --verbosity normal --logger trx $PROJECT_PATH
+
+      - name: "Show test report"
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: test-report
+          path: Notes.Api.Test/TestResults/*.trx
+          reporter: dotnet-trx
